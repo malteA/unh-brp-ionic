@@ -1,0 +1,212 @@
+#container{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	width:100%;
+	overflow:hidden;
+	margin-top:2em;
+	margin-bottom:3em;
+	background-color:#FFFFFF;
+	position:relative;
+	height: auto;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #aaa;
+}
+
+
+#container h1,
+#container h2{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	color:#949494;
+	border:0px;
+}
+
+#container h1{
+	font-size: 24px;
+	padding-top: 15px;
+	font-weight: normal;
+}
+#container h2{
+	font-size: 13px;
+	padding-top: 45px;
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+#container p {
+	font-size: 16px;
+	color: #000;
+	margin-top:15px;
+	padding: 10px ;
+} 
+
+#container #display{
+	position: relative;
+	background: transparent url('/src/assets/img/bg_display_day.png') no-repeat bottom right;
+	background-size: 100% 100%;
+	height: 255px;
+	margin-bottom: 1px;
+}
+#container #display #nightmode{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	background: transparent url("/src/assets/img/bg_display_night.png") no-repeat bottom right;
+	background-size: 100% 100%;
+}
+.night{
+	/* Animation */
+	/* Safari/Chrome */	
+	-webkit-animation: night_sequence .3s linear;
+	/* IE10+ and Future Browsers */
+	animation: night_sequence .3s linear;
+	opacity: 1;
+}
+@-webkit-keyframes night_sequence {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes night_sequence {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.day{
+	/* Animation */
+	/* Safari/Chrome */
+	-webkit-animation: day_sequence .3s linear;
+	/* IE10+ and Future Browsers */
+	animation: day_sequence .3s linear;
+	opacity: 0;
+}
+@-webkit-keyframes day_sequence {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes day_sequence {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+#container #display .layer{
+	position: absolute;
+	top: 88px;
+	width: 30%;
+	text-align:center;
+}
+#container #display .layer img{
+	width:80%;
+}
+#container #display .layer.west{
+	left: 10%;
+}
+#container #display .layer.east{
+	right: 4%;
+}
+#container #display .layer h2{
+	padding-top: 10px;
+}
+
+#container .ui-widget-content{
+	background: transparent; 
+	border: 0px;
+	height: 26px;
+}
+
+
+@media (max-width: 35em){
+
+	#container #display,
+	#container #display #nightmode {
+		background-position:85% bottom;
+	}
+}
+@media (max-width: 27em){
+
+	#container #display .layer.west{
+		left: 3%;
+		width:36%;
+	}
+	#container #display,
+	#container #display #nightmode{
+		background-position:72% bottom;
+	}
+
+	#container h1{
+		font-size:18px;
+	}
+	#container h2{
+		padding-top:36px;
+	}
+}
+@media (min-width: 35em) and (max-width: 65em) and (min-height: 25em){
+
+	#container #display .layer.west{
+		left: 3%;
+	}
+	#container #display,
+	#container #display #nightmode{
+		background-position:72% bottom;
+	}
+
+	#container h1{
+		font-size:18px;
+	}
+	#container h2{
+		padding-top:36px;
+	}
+	#container #display .layer.west img,
+	#container #display .layer.east img{
+		width: 50%;
+	}
+}
+@media (min-height: 20em) and (max-height: 25em) and (min-width: 35em){
+	#container{
+		margin-top: 0px;
+	}
+	#container #display{
+		height: 17em;
+	}
+}
+@media (min-height: 25em) and (max-height: 35em) and (min-width: 35em){
+	#container{
+		margin-top: 0px;
+	}
+	#container #display{
+		height: 22em
+	}
+}
+#has-header p h1{
+	padding: 8px 0px 8px 8px;
+}
+#has-header p h2{
+	padding-top: 1em;
+}
+#has-header p span{
+	font-size: 14px;
+}
+.impressum{
+	padding: 5px 5px 5px 5px;
+}
+.impressum table{
+	width: 100%;
+}

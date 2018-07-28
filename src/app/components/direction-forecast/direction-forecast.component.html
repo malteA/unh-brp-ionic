@@ -1,0 +1,26 @@
+<div id="container">
+  <div class="row">
+      <div class="col-md-7">
+          <h4>Operating direction forecast</h4>
+      </div>
+  </div>
+  <div id="display">
+      <div id="nightmode" [ngClass]="nightmode ? 'night' : 'day'"></div>
+      <h1>{{date | date:'EEEE dd.MMMM, HH:mm'}}</h1>
+      <h2>Probability of forecast:  <span>{{probability}}%</span></h2>
+
+      <div class="layer west" [ngStyle]="{'opacity': west}">
+          <img src="/src/assets/img/plane_west.png">
+          <h2>Departure west operating direction 25</h2>
+      </div>
+      <div class="layer east" [ngStyle]="{'opacity': east}">
+          <img src="/src/assets/img/plane_east.png">
+          <h2>Departure east operating direction 07</h2>
+      </div>
+  </div>
+    <div [ngStyle]="{'background': gradient}">
+        <ion-range [(ngModel)]="time" min="0" max="240" step="2" (ionChange)="onSlide()"></ion-range>
+    </div>
+  <p>{{directionForecast?.info}}</p>
+
+</div>
